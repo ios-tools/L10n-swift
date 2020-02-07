@@ -20,24 +20,7 @@ let package = Package(
     targets: [
         .target(
             name: "L10n-swift",
-            path: "Source",
-            exclude: {
-                var paths: [String] = []
-                #if !canImport(WatchKit)
-                    paths.append("IBInspectables/WatchKit")
-                #endif
-
-                #if canImport(UIKit)
-                    #if os(iOS)
-                        paths.append("IBInspectables/UIKit/tvOS")
-                    #elseif os(tvOS)
-                        paths.append("IBInspectables/UIKit/iOS")
-                    #endif
-                #else
-                    paths.append("IBInspectables/UIKit")
-                #endif
-                return paths
-            }()
+            path: "Source"
         ),
 //        .testTarget(
 //            name: "L10n-swiftTest",
